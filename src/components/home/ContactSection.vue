@@ -95,8 +95,8 @@ const contactLinks = [
   },
   {
     label: 'LinkedIn',
-    sub: 'linkedin.com/in/topp-richard-60a157222',
-    href: 'https://linkedin.com/in/topp-richard-60a157222',
+    sub: 'linkedin.com/in/tauk-tauk-lin-60a157222',
+    href: 'https://linkedin.com/in/tauk-tauk-lin-60a157222',
     icon: 'mdi-linkedin',
   },
   {

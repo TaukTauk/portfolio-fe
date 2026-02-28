@@ -38,7 +38,7 @@ const isDark = computed(() => themeStore.isDark)
 
 const footerLinks = [
   { label: 'GitHub', href: 'https://github.com/TaukTauk', icon: 'mdi-github' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/topp-richard-60a157222', icon: 'mdi-linkedin' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/tauk-tauk-lin-60a157222', icon: 'mdi-linkedin' },
   { label: 'Email', href: 'mailto:tauktauk51833@gmail.com', icon: 'mdi-email-outline' },
 ]
 </script>
