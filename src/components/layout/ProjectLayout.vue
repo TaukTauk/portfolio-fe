@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen" :class="isDark ? 'theme-dark' : 'theme-light'">
+  <div class="min-h-screen">
     <AppNav />
 
     <main class="relative z-10 pt-[60px]">
@@ -493,7 +493,7 @@ const openLightbox = (i: number) => {
   lightboxIndex.value = i
 }
 
-const currentIndex = computed(() => projects.findIndex((p) => p.id === props.project.id))
+const currentIndex = computed(() => projects.findIndex((p: Project) => p.id === props.project.id))
 const prevProject = computed(() =>
   currentIndex.value > 0 ? projects[currentIndex.value - 1] : null,
 )
@@ -511,12 +511,14 @@ const statusClass = computed(() => {
       return 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20'
     case 'infrastructure':
       return 'bg-purple-500/10 text-purple-400 border border-purple-500/20'
+    case 'opensource':
+      return 'bg-blue-500/10 text-blue-400 border border-blue-500/20'
     default:
       return ''
   }
 })
 onMounted(() => {
-  window.scrollTo({ top: 0, behavior: 'instant' })
+  window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
 })
 </script>
 

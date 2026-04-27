@@ -1,6 +1,6 @@
-export type ProjectStatus = 'production' | 'development' | 'system' | 'infrastructure'
+export type ProjectStatus = 'production' | 'development' | 'system' | 'infrastructure' | 'opensource'
 
-export type ProjectCategory = 'professional' | 'systems'
+export type ProjectCategory = 'professional' | 'systems' | 'opensource'
 
 export interface ArchTag {
   label: string
@@ -474,7 +474,82 @@ export const projects: Project[] = [
   photos: [],
   lessons: [],
 },
+
+  // ── OPEN SOURCE ───────────────────────────────────────────
+  {
+    id: 'dockerwiz',
+    name: 'Dockerwiz',
+    link: 'https://github.com/TaukTauk/dockerwiz',
+    category: 'opensource',
+    status: 'opensource',
+    statusLabel: 'Open Source · v0.1.4',
+    lang: 'Python',
+    icon: 'mdi-console-line',
+    tagline: 'Docker Configuration Wizard CLI',
+    desc: 'A production-grade Python CLI that scaffolds complete Docker setups through an interactive 6-screen terminal wizard — Dockerfile, docker-compose, Makefile, .env, and nginx.conf in one command.',
+    overview: 'Dockerwiz is a solo open-source project built to eliminate the friction of manually writing Docker configurations. Running dockerwiz launches a guided TUI wizard that collects project name, language/framework, optional services, ports, and credentials — then generates a complete, environment-aware Docker setup. Published on PyPI at v0.1.4, tested across Python 3.11, 3.12, and 3.13.',
+    objective: 'Build a reusable, offline-capable CLI tool that any developer can use to scaffold production-ready Docker setups in seconds, with intelligent defaults and guided validation — no Docker expertise required.',
+    role: 'Solo Developer',
+    responsibilities: [
+      'Designed the full module architecture with strict 4-layer dependency rules and no circular imports',
+      'Built the 6-screen TUI using Textual with incremental state (PartialProjectConfig → ProjectConfig)',
+      'Implemented Jinja2 template system for multi-stage Dockerfiles, docker-compose, Makefile, nginx, and .env',
+      'Built Docker Hub API client with offline fallbacks and 24-hour version caching',
+      'Implemented port conflict detection and mutex service validation (PostgreSQL + MySQL exclusivity)',
+      'Wrote 40+ test cases including snapshot tests for all template outputs',
+      'Published to PyPI and set up GitHub Actions CI across Python 3.11, 3.12, 3.13',
+      'Documented with CLAUDE.md, ARCHITECTURE.md, DESIGN.md, PRODUCT.md, and contributing guides',
+    ],
+    archTags: [
+      { label: 'TUI Wizard', icon: 'mdi-layers-outline' },
+      { label: 'Template Engine', icon: 'mdi-file-code-outline' },
+      { label: 'Docker Hub API', icon: 'mdi-docker' },
+      { label: 'Offline Fallback', icon: 'mdi-wifi-off' },
+    ],
+    techTags: ['Python', 'Textual', 'Jinja2', 'Typer', 'Pydantic v2'],
+    features: [
+      'Interactive 6-screen TUI wizard — project setup, language/framework, services, ports, review, generate',
+      'Supports Python (FastAPI, Django), Go (Gin, Echo), and Node.js (Express, NestJS)',
+      'Optional services: PostgreSQL, MySQL, Redis, MongoDB, Nginx reverse proxy',
+      'Multi-stage Dockerfiles with separate dev and production configurations',
+      'Port conflict detection before generation — catches issues before they hit runtime',
+      'Offline support — Docker Hub version fallbacks with visual offline indicator',
+      'Atomic file generation — writes to temp directory, then moves to avoid partial state',
+      'Back button preserves state across all TUI screens',
+      'Non-root user in all Python and Node.js production containers',
+      'Makefile with convenience targets: up, down, build, shell, logs, clean',
+    ],
+    architecture: [
+      'Strict 4-layer module dependency graph — Foundation → Domain → Application → Presentation',
+      'No circular imports enforced — only cli.py bridges all layers',
+      'PartialProjectConfig collects TUI input incrementally, validated into ProjectConfig at generation time',
+      'Jinja2 templates per stack (python/fastapi, go/gin, node/express) with conditional dev/prod blocks',
+      'docker_hub.py never raises — returns fallback + is_live=False on any failure for offline resilience',
+      'Async isolated to docker_hub.py (httpx); TUI uses run_worker() for background operations',
+      'Atomic writes via temporary directory then move — no partial output on failure',
+    ],
+    security: [
+      'Non-root appuser in all Python and Node.js production containers',
+      '.env.example renders db_password as "changeme" to prevent accidental secret commits',
+      '.env created from .env.example at runtime — never tracked in version control',
+      'Docker Hub API uses HTTPS only with tag filtering',
+      'Responsible disclosure policy at SECURITY.md',
+    ],
+    performance: [
+      '24-hour Docker Hub version cache eliminates repeat network calls',
+      'Snapshot tests catch template regressions in CI automatically',
+      'Type-checked across Python 3.11, 3.12, and 3.13 in GitHub Actions',
+    ],
+    stack: [
+      'Python', 'Textual', 'Typer', 'Jinja2', 'Pydantic v2',
+      'httpx', 'Docker SDK', 'Rich', 'tomli-w',
+      'pytest', 'mypy', 'PyPI', 'GitHub Actions',
+    ],
+    route: '/projects/dockerwiz',
+    photos: [],
+  },
 ]
 
 export const professionalProjects = projects.filter(p => p.category === 'professional')
 export const systemsProjects = projects.filter(p => p.category === 'systems')
+export const openSourceProjects = projects.filter(p => p.category === 'opensource')
