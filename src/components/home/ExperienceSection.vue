@@ -54,6 +54,7 @@
             <a
               href="https://www.dattech.dev/"
               target="_blank"
+              rel="noopener noreferrer"
               class="block no-underline mb-1 transition-colors duration-200 hover:text-accent group"
               style="color: var(--text-primary);"
             >

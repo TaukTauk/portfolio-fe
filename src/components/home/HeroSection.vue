@@ -3,8 +3,7 @@
     <div class="max-w-[1100px] mx-auto w-full py-24">
       <!-- Eyebrow -->
       <div
-        class="flex items-center gap-3 mb-8 font-mono text-[13px] tracking-[0.25em] uppercase"
-        :class="isDark ? 'text-[var(--text-muted)]' : 'text-[var(--text-muted)]'"
+        class="flex items-center gap-3 mb-8 font-mono text-[13px] tracking-[0.25em] uppercase text-(--text-muted)"
         v-motion-fade-visible
       >
         <span class="inline-block w-2 h-2 rounded-full bg-green-500 animate-pulse" />
@@ -77,6 +76,7 @@
         <a
           href="https://github.com/TaukTauk"
           target="_blank"
+          rel="noopener noreferrer"
           class="hero-btn-outline font-mono text-[13px] tracking-[0.1em] uppercase px-7 py-3 flex items-center gap-2 no-underline transition-all duration-200"
         >
           <v-icon icon="mdi-github" size="14" />
@@ -96,12 +96,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useThemeStore } from '@/stores/theme'
 import ArchDiagram from '@/components/ui/ArchDiagram.vue'
-
-const themeStore = useThemeStore()
-const isDark = computed(() => themeStore.isDark)
 
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })

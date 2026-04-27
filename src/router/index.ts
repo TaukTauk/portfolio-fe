@@ -45,6 +45,11 @@ const router = createRouter({
       component: () => import('@/views/projects/InceptionView.vue'),
     },
     {
+      path: '/projects/dockerwiz',
+      name: 'dockerwiz',
+      component: () => import('@/views/projects/DockerWizView.vue'),
+    },
+    {
       path: '/:pathMatch(.*)*',
       redirect: '/',
     },

@@ -20,12 +20,7 @@
         v-for="link in navLinks"
         :key="link.label"
         :href="link.href"
-        class="nav-link font-mono text-[13px] tracking-widest uppercase transition-colors duration-200 no-underline"
-        :class="
-          isDark
-            ? 'text-[var(--text-secondary)] hover:text-accent'
-            : 'text-[var(--text-secondary)] hover:text-accent'
-        "
+        class="nav-link font-mono text-[13px] tracking-widest uppercase transition-colors duration-200 no-underline text-(--text-secondary) hover:text-accent"
         @click="handleNavClick"
       >
         {{ link.label }}
@@ -73,12 +68,7 @@
           v-for="link in navLinks"
           :key="link.label"
           :href="link.href"
-          class="font-mono text-[13px] tracking-widest uppercase px-12 py-3 transition-colors duration-200 no-underline"
-          :class="
-            isDark
-              ? 'text-[var(--text-secondary)] hover:text-accent'
-              : 'text-[var(--text-secondary)] hover:text-accent'
-          "
+          class="font-mono text-[13px] tracking-widest uppercase px-12 py-3 transition-colors duration-200 no-underline text-(--text-secondary) hover:text-accent"
           @click="mobileOpen = false"
         >
           {{ link.label }}
@@ -101,6 +91,7 @@ const navLinks = [
   { label: 'Approach', href: '/#approach' },
   { label: 'Experience', href: '/#experience' },
   { label: 'Projects', href: '/#projects' },
+  { label: 'Open Source', href: '/#opensource' },
   { label: 'Systems', href: '/#systems' },
   { label: 'Stack', href: '/#stack' },
   { label: 'Contact', href: '/#contact' },
