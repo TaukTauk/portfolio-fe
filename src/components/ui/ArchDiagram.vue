@@ -5,11 +5,7 @@
       <div
         v-for="(node, i) in nodes"
         :key="node.id"
-        :ref="
-          (el) => {
-            if (el) nodeRefs[i] = el as HTMLElement
-          }
-        "
+        :ref="(el) => setNodeRef(el, i)"
         class="arch-node font-mono text-[13px] tracking-[0.08em] uppercase cursor-default select-none transition-all duration-200"
         :class="{ 'arch-node--active': activeNode === node.id }"
         @mouseenter="activeNode = node.id"
@@ -36,7 +32,7 @@
     >
       <defs>
         <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-          <path d="M0,0 L0,6 L6,3 z" :fill="arrowColor" opacity="0.6" />
+          <path d="M0,0 L0,6 L6,3 z" :fill="accentColor" opacity="0.6" />
         </marker>
 
         <!-- Animated dash -->
@@ -84,7 +80,10 @@ import { useThemeStore } from '@/stores/theme'
 const themeStore = useThemeStore()
 const isDark = computed(() => themeStore.isDark)
 const accentColor = '#e03131'
-const arrowColor = computed(() => accentColor)
+
+const setNodeRef = (el: unknown, i: number) => {
+  if (el) nodeRefs[i] = el as HTMLElement
+}
 
 const wrapperRef = ref<HTMLElement | null>(null)
 const nodeRefs = reactive<HTMLElement[]>([])

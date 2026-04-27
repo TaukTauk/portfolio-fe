@@ -1,5 +1,5 @@
 <template>
-  <div :class="themeStore.isDark ? 'theme-dark' : 'theme-light'">
+  <div class="min-h-screen" :class="themeStore.isDark ? 'theme-dark' : 'theme-light'">
     <RouterView />
   </div>
 </template>
