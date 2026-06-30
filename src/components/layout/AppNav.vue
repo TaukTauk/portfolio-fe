@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-12 h-[60px] border-b transition-all duration-300"
+    class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-12 xl:px-16 2xl:px-20 h-[60px] border-b transition-all duration-300"
     :class="[
       scrolled ? 'backdrop-blur-md shadow-lg' : '',
       isDark ? 'bg-[#1e1e1e]/90 border-white/5' : 'bg-[#f5f4f0]/90 border-black/5',
