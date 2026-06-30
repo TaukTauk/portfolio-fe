@@ -1,6 +1,6 @@
 <template>
   <section id="approach" class="relative z-10 py-32 px-6 md:px-12">
-    <div class="max-w-[1100px] mx-auto">
+    <div class="max-w-[1100px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto">
       <!-- Section header -->
       <div class="mb-16">
         <div class="section-label mb-3">// Engineering Approach</div>
@@ -9,7 +9,7 @@
 
       <!-- Principles grid -->
       <div
-        class="grid grid-cols-1 md:grid-cols-2 gap-px"
+        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-px"
         :class="isDark ? 'bg-white/5' : 'bg-black/5'"
       >
         <div
@@ -75,33 +75,33 @@ const active = ref<number | null>(null)
 const principles = [
   {
     icon: 'mdi-shield-lock-outline',
-    title: 'Security-first mindset',
-    desc: 'Building systems with security considerations at every layer, from authentication to data handling and API boundary enforcement.',
+    title: 'Secure-by-design',
+    desc: 'Embedding security controls at infrastructure, platform, and application layers — not as an afterthought, but as a foundational design constraint from day one.',
   },
   {
     icon: 'mdi-layers-outline',
     title: 'Separation of concerns',
-    desc: 'Clean architecture patterns that ensure maintainability and testability — controllers, services, and data layers stay clearly separated.',
+    desc: 'Clean architecture with clear security boundaries — services, secrets, and identities are scoped and isolated, not shared across trust domains.',
   },
   {
-    icon: 'mdi-speedometer',
-    title: 'Performance-aware backend design',
-    desc: 'Optimizing database queries, caching strategies, and API response times with production scale in mind from the start.',
+    icon: 'mdi-layers-triple-outline',
+    title: 'Defence in depth',
+    desc: 'Layered controls — Vault for secrets, mTLS for transport, RBAC for access, scanning in CI/CD — so no single failure exposes the whole system.',
   },
   {
-    icon: 'mdi-server-outline',
-    title: 'Infrastructure-conscious development',
-    desc: 'Understanding deployment pipelines, containerization, and cloud infrastructure as a developer — not just as an operator.',
+    icon: 'mdi-pipe',
+    title: 'Security integrated into delivery',
+    desc: 'Security controls live in the pipeline: image scanning, SAST/DAST, policy enforcement in GitOps — not bolted on after deployment.',
   },
   {
     icon: 'mdi-arrow-expand-all',
     title: 'Scalable architecture thinking',
-    desc: 'Designing systems that can grow with business needs while maintaining reliability, observability, and performance.',
+    desc: 'Designing systems that grow with business needs while maintaining reliability, observability, and a consistent security posture at scale.',
   },
   {
     icon: 'mdi-cpu-64-bit',
     title: 'Systems-level depth',
-    desc: 'Low-level understanding of OS concepts, networking, and memory management that informs better abstractions at every layer.',
+    desc: 'Low-level understanding of OS concepts, networking, and memory management that informs better security decisions at every abstraction layer.',
   },
 ]
 </script>

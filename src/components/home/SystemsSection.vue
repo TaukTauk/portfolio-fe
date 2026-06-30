@@ -1,6 +1,6 @@
 <template>
   <section id="systems" class="relative z-10 py-32 px-6 md:px-12">
-    <div class="max-w-[1100px] mx-auto">
+    <div class="max-w-[1100px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto">
       <!-- Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
         <div>

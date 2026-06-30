@@ -17,7 +17,7 @@
           <div class="absolute inset-0" :class="isDark ? 'bg-[#1e1e1e]/85' : 'bg-white/85'" />
         </div> -->
 
-        <div class="relative z-10 max-w-[1100px] mx-auto">
+        <div class="relative z-10 max-w-[1100px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto">
           <!-- Back button -->
           <button
             class="flex items-center gap-2 font-mono text-[13px] tracking-widest uppercase mb-10 transition-all duration-200 hover:text-accent group"
@@ -120,7 +120,7 @@
         class="px-6 md:px-12 py-16 border-b"
         :class="isDark ? 'border-white/5' : 'border-black/5'"
       >
-        <div class="max-w-[1100px] mx-auto">
+        <div class="max-w-[1100px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto">
           <div class="section-label mb-6">// Screenshots</div>
           <div class="grid grid-cols-1 gap-3">
 			  <div
@@ -148,7 +148,7 @@
 
       <!-- Main content grid -->
       <div class="px-6 md:px-12 py-20">
-        <div class="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="max-w-[1100px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
           <!-- Left: main content -->
           <div class="lg:col-span-2 space-y-16">
             <!-- Overview -->
@@ -372,7 +372,7 @@
         class="px-6 md:px-12 py-12 border-t"
         :class="isDark ? 'border-white/5' : 'border-black/5'"
       >
-        <div class="max-w-[1100px] mx-auto flex items-center justify-between gap-4">
+        <div class="max-w-[1100px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto flex items-center justify-between gap-4">
           <button
             v-if="prevProject"
             class="flex items-center gap-3 group font-mono text-[13px] tracking-wide uppercase transition-all duration-200 hover:text-accent"
@@ -427,7 +427,6 @@
     </main>
 
     <AppFooter />
-    <AiChat />
 
     <!-- Lightbox -->
     <Transition name="lightbox">
@@ -481,7 +480,6 @@ import { projects } from '@/data/projects'
 import type { Project } from '@/data/projects'
 import AppNav from '@/components/layout/AppNav.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
-import AiChat from '@/components/ui/AiChat.vue'
 
 const props = defineProps<{ project: Project }>()
 

@@ -4,16 +4,14 @@
     class="relative z-10 py-32 px-6 md:px-12 border-t"
     :class="isDark ? 'border-white/5' : 'border-black/5'"
   >
-    <div class="max-w-[1100px] mx-auto">
+    <div class="max-w-[1100px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <!-- Left -->
         <div>
           <div class="section-label mb-3">// Contact</div>
-          <h2 class="section-title mb-6">Let's work<br />together</h2>
+          <h2 class="section-title mb-6">Get in<br />touch</h2>
           <p class="font-mono text-[13px] leading-relaxed mb-10" style="color: var(--text-muted)">
-            Open to full-stack and backend opportunities in ASEAN. 
-			Particularly interested in roles involving scalable system architecture, 
-			backend engineering, AI-integrated systems, or end-to-end product development.
+            Currently engaged full-time as Security Engineer at ThitsaWorks and part-time as AI Product Associate at Sozo Lab. Not actively seeking new roles, but feel free to reach out.
           </p>
 
           <!-- Status indicator -->
@@ -22,8 +20,8 @@
             :class="isDark ? 'border-white/8' : 'border-black/8'"
             style="color: var(--text-secondary)"
           >
-            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse inline-block" />
-            Currently available
+            <span class="w-2 h-2 rounded-full inline-block" style="background: var(--text-muted);" />
+            Not currently available
           </div>
         </div>
 

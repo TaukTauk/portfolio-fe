@@ -1,13 +1,13 @@
 <template>
   <section class="relative min-h-screen flex items-center px-6 md:px-12 pt-[60px]">
-    <div class="max-w-[1100px] mx-auto w-full py-24">
+    <div class="max-w-[1100px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto w-full py-24">
       <!-- Eyebrow -->
       <div
         class="flex items-center gap-3 mb-8 font-mono text-[13px] tracking-[0.25em] uppercase text-(--text-muted)"
         v-motion-fade-visible
       >
-        <span class="inline-block w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-        Available for opportunities · ASEAN
+        <span class="inline-block w-2 h-2 rounded-full" style="background: var(--accent);" />
+        Security Engineer · Remote · ASEAN
       </div>
 
       <!-- Name -->
@@ -32,7 +32,7 @@
           letter-spacing: 0.05em;
         "
       >
-        Full-Stack Engineer with a Backend &amp; Systems Focus
+        Security Engineer with a Full-Stack Development Background
       </div>
 
       <!-- Description -->
@@ -40,8 +40,7 @@
         class="font-mono leading-relaxed mb-12 max-w-[520px]"
         style="font-size: 16px; color: var(--text-muted)"
       >
-        I design secure, scalable systems with long-term architecture in mind — from low-level C/C++
-        implementations to production FastAPI, Express.js services and containerized infrastructure.
+        I secure infrastructure and platforms while building scalable backend systems — from Kubernetes security controls and HashiCorp Vault to production FastAPI services and containerized deployments.
       </p>
 
       <!-- Arch Diagram -->
@@ -90,7 +89,7 @@
       class="absolute bottom-12 right-12 font-mono text-[12px] tracking-widest hidden lg:block"
       style="color: var(--text-muted); writing-mode: vertical-rl"
     >
-      BACKEND · SYSTEMS · INFRASTRUCTURE
+      SECURITY · SYSTEMS · INFRASTRUCTURE
     </div>
   </section>
 </template>

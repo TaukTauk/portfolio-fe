@@ -1,6 +1,6 @@
 <template>
   <section id="stack" class="relative z-10 py-32 px-6 md:px-12">
-    <div class="max-w-[1100px] mx-auto">
+    <div class="max-w-[1100px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto">
 
       <!-- Header -->
       <div class="mb-16">
@@ -10,7 +10,7 @@
 
       <!-- Grid -->
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-8 gap-px"
         :class="isDark ? 'bg-white/5' : 'bg-black/5'"
       >
         <StackCard
@@ -56,17 +56,17 @@ const stackCategories = [
   {
     name: 'Infrastructure',
     icon: 'mdi-cloud-outline',
-    tags: ['Docker', 'Nginx', 'PM2', 'Linux'],
+    tags: ['Docker', 'Kubernetes', 'Nginx', 'Argo CD', 'Istio', 'PM2', 'Linux'],
   },
   {
-    name: 'Auth & Security',
+    name: 'Security',
     icon: 'mdi-shield-lock-outline',
-    tags: ['JWT', 'RBAC', 'OAuth 2.0', 'TLS/SSL'],
+    tags: ['HashiCorp Vault', 'PKI / mTLS', 'JWT', 'RBAC', 'OAuth 2.0', 'TLS/SSL'],
   },
   {
     name: 'AI Integration',
     icon: 'mdi-brain',
-    tags: ['Gemini API', 'pgvector', 'RAG', 'FastAPI', 'Ollama'],
+    tags: ['LangChain', 'LangGraph', 'Flowise', 'MCP', 'RAG', 'pgvector', 'Ollama', 'AI Agents'],
   },
   {
     name: 'Systems',

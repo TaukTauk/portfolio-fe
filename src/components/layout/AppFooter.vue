@@ -1,13 +1,13 @@
 <template>
   <footer
-    class="relative z-10 border-t px-12 py-8 flex flex-col md:flex-row items-center justify-between gap-4"
+    class="relative z-10 border-t px-12 xl:px-16 2xl:px-20 py-8 flex flex-col md:flex-row items-center justify-between gap-4"
     :class="isDark ? 'border-white/5' : 'border-black/5'"
   >
     <div
       class="font-mono text-[13px] tracking-widest"
       :class="isDark ? 'text-[var(--text-muted)]' : 'text-[var(--text-muted)]'"
     >
-      © 2025 Tauk Tauk Lin — Built with focus on architecture and performance.
+      © {{ new Date().getFullYear() }} Tauk Tauk Lin
     </div>
     <div class="flex items-center gap-6">
       <a
